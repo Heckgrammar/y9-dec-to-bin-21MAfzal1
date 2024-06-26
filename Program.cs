@@ -23,38 +23,10 @@ namespace Y9_DEC_TO_BIN_SKELETON
             string two = "123";
             string combined = one + two;
             Console.WriteLine(combined);
-            //CODE GOES HERE
 
-            string binaryNumber = " ";
 
-            Console.WriteLine("Enter a number");
-            int number = Console.Read();
-            int remainder = number % 2;
-            while (remainder != 0) ;
-            { 
-            remainder = number % 2;
-            binaryNumber = " ";
-            string remainder2 = remainder.ToString();
-            binaryNumber = binaryNumber + remainder2;
-            number = number / 2;
-        }
-            while (remainder != 1) ;
-            {
+    
                 
-                 binaryNumber = " ";
-                string remainder2 = remainder.ToString();
-                binaryNumber = binaryNumber + remainder2;
-                number = number / 2;
-            }
-             while (remainder != 0) ;
-            { 
-            remainder = number % 2;
-            binaryNumber = " ";
-            string remainder2 = remainder.ToString();
-            binaryNumber = binaryNumber + remainder2;
-            number = number / 2;
-        } remainder = number % 2;
-            Console.WriteLine(binaryNumber);
         }
 
 
@@ -65,9 +37,38 @@ namespace Y9_DEC_TO_BIN_SKELETON
         //...this function DOES return a value so the method must have a data type
         static string numberConversion(int number, int numberbase)
         {
-            //CODE GOES HERE
-            int calc = number + numberbase;
-            string result = calc.ToString();
+            
+string result = " ";
+
+            int remainder = 0;
+
+            int count = 0;
+
+            int[] binary = new int[32];
+
+            while (number > 0)
+
+            {
+
+                remainder = number % numberbase;
+
+                number = number / numberbase;
+
+                binary[count] = remainder;
+
+                count = count + 1;
+
+            }
+
+            for (int j = count - 1; j >= 0; j--)
+
+            {
+
+                Console.Write(binary[j]);
+
+            }
+
+         
 
             return result; //REMOVE THE RED LINE!
 
